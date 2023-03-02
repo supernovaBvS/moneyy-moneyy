@@ -19,7 +19,7 @@ def home():
         outcome = request.form.get('outcome')
         des = request.form.get('des')
 
-        if len(date) < 1 | len(category) < 1:
+        if len(date) < 1 | len(category) < 1: # wrong condition
             flash('transaction is invalid', category='error')
         else:
             new_transaction = Transaction(date=date, category=category, income=income, outcome=outcome, des=des, user_id=current_user.id, )
