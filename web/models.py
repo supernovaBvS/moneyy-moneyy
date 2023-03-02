@@ -17,3 +17,14 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(150))
     last_name = db.Column(db.String(150))
     notes = db.relationship('Note')
+
+
+class Transaction(db.Model):
+    # __tablename__ = 'transactions'
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.Date)
+    category = db.Column(db.String)
+    income = db.Column(db.Float)
+    outcome = db.Column(db.Float)
+    des = db.Column(db.String)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

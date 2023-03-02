@@ -2,7 +2,8 @@
 
 {% block content %} 
 <h1 align="center">Money Tracker</h1>
-<ul class="list-group list-group-flush" id="notes">
+<!--
+    <ul class="list-group list-group-flush" id="notes">
     {% for note in user.notes %}
     <li class="list-group-item">{{ note.data }}
         <button type="button" class="close" onclick="deleteNote({{ note.id }})">
@@ -17,5 +18,75 @@
     <div align="center">
         <button type="submit" class="btn btn-primary">Add Note</button>
     </div>
+    </form>
+-->
+
+
+<form method="POST">
+    <h3 align="center">Let the superior track your money</h3>
+    <br>
+    <label for="birthdate">Select your day of your transaction:</label>
+    <input type="date" id="birthdate" name="birthdate">
+    <br>
+    <br>
+    <br>
+    <div class="button-group" >
+        <button id="trans-btn" class="btn btn-primary" type="button">Trans</button>
+        <button id="food-btn" class="btn btn-primary" type="button">Food</button>
+        <button id="drink-btn" class="btn btn-primary" type="button">Drink</button>
+        <button id="shop-btn" class="btn btn-primary" type="button">Shop</button>
+        <button id="ran-btn" class="btn btn-primary" type="button">Others</button>
+        <button id="sell-btn" class="btn btn-primary" type="button">Sell</button>
+        <button id="income-btn" class="btn btn-primary" type="button">Income</button>
+      </div>
+      <br>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <br>
+          <label for="outcome">Enter the HKD of the outcome:</label>
+          <input type="outcome" class="form-control" id="outcome" name="outcome" placeholder="Enter outcome amount">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="income">Enter the HKD of the income:</label>
+          <input type="text" class="form-control" id="income" name="income" placeholder="Enter income amount">
+        </div>
+      </div>
+    <br>
+    <div class="form-group">
+        <label for="firstName">Descirption</label>
+        <input
+        type="text"
+        class="form-control"
+        id="descirption"
+        name="descirption"
+        placeholder="Enter descirption"
+        />
+    </div>
+    <!--
+    <div class="form-group">
+        <label for="password1">Password</label>
+        <input
+        type="password"
+        class="form-control"
+        id="password1"
+        name="password1"
+        placeholder="Enter password"
+        />
+    </div>
+    <div class="form-group">
+        <label for="password2">Password (Confirm)</label>
+        <input
+        type="password"
+        class="form-control"
+        id="password2"
+        name="password2"
+        placeholder="Confirm password"
+        />
+    </div>
+-->
+    <div style="text-align: right;">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  
     </form>
 {% endblock %}
